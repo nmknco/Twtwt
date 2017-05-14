@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="experiments.css">
+    <script async src="//platform.twitter.com/widgets.js" 
+      charset="utf-8"></script>
+    <script src="angular.min.js"></script>
+    <script src="angularApp.js"></script>
+
+    <title> Twitter List View </title>
+  </head>
+
+  <body ng-app="twtwt" ng-controller="mainController">
+    <div class="topbar">
+      <nav class="navbar">
+        <ul>
+          <li><a href="">ABOUT</a></li>
+          <li><a href="">SETTINGS</a></li>
+          <li><a href="">LOG OUT</a></li>
+        </ul>
+      </nav>
+      <div class="tlbar">
+        <div ng-repeat="i in range(3) track by $index" class="tlHeader">
+          <div class="tlTitle">
+            <span class="menu-text rotate" id="title{{$index}}" ng-click="selectBox($index)">
+            </span>
+          </div>
+          <div ng-class="$index==selected?'tl-selected':'tl-select'"
+            ng-click=selectBox($index)>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div id="sidebar1" class="sidebar">
+        <div class="sidebarHeader">
+        <img class="avatar"
+          src="img_design/talkdream.jpg" width="40" height="40" border="1">
+          <span class="user-info rotate">@nimeikun</span></div>
+        <ul>
+          <li>
+            <div class="expand"> <span class="menu-text"> > </span> </div>
+            <div class="list-item">
+                <span class="menu-text rotate">Following</span>
+            </div>
+          </li>
+        </ul>
+        <div class="sidebarCategory rotate">:: Your lists</div>
+        <ul>
+          <li ng-repeat="ls in lists" 
+              ng-class="$index==selectedLS?'list-selected':''">
+            <button class="expand" ng-click="getMember(ls.id_str, $index)"> 
+              <span class="menu-text rotate"> > </span>
+            </button>
+            <div class="list-item" id="list{{$index}}" 
+              ng-click="showListTL(ls.user.screen_name, ls.slug, ls.name)"> 
+              <span class="menu-text rotate"> {{ls.name}} </span>
+            </div>
+          </li>
+        </ul>
+        <div class="sidebarCategory rotate">:: Subscribed Lists</div>
+      </div>
+      <div id="sidebar2" class="sidebar">
+        <div class="sidebarCategory rotate">:: List members</div>
+        <ul>
+          <li ng-repeat="mb in members.users">
+            <div class="member-item"  id="member{{$index}}" 
+                ng-click="showMemberTL(mb.screen_name, mb.name)">
+              <span class="menu-text rotate">
+                {{mb.name}}
+              </span>
+            </div>
+            <div class="member-layover" id="mb-bottom{{$index}}" >
+              <img class="member-avatar" src="{{mb.profile_image_url_https}}">
+              <div class="member-info"> 
+                <span class="rotate">{{mb.name}}</span>
+                <span class="rotate">@{{mb.screen_name}}</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="boxes">
+        <div ng-repeat="i in range(3) track by $index" id="box{{$index}}" class="timeline"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
