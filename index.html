@@ -15,9 +15,9 @@
     <div class="topbar">
       <nav class="navbar">
         <ul>
-          <li><a href="">ABOUT</a></li>
-          <li><a href="">SETTINGS</a></li>
-          <li><a href="">LOG OUT</a></li>
+          <li><a href=""><span class="rotate">ABOUT</span></a></li>
+          <li><a href=""><span class="rotate">SETTINGS</span></a></li>
+          <li><a href=""><span class="rotate">LOG OUT</span></a></li>
         </ul>
       </nav>
       <div class="tlbar">
@@ -46,7 +46,9 @@
             </div>
           </li>
         </ul>
-        <div class="sidebarCategory rotate">:: Your lists</div>
+        <div class="sidebarCategory"> 
+          <span class="rotate">Your lists</span>
+        </div>
         <ul>
           <li ng-repeat="ls in lists" 
               ng-class="$index==selectedLS?'list-selected':''">
@@ -59,10 +61,17 @@
             </div>
           </li>
         </ul>
-        <div class="sidebarCategory rotate">:: Subscribed Lists</div>
+        <div class="sidebarCategory"> 
+          <span class="rotate">Subscribed Lists</span>
+        </div>
       </div>
       <div id="sidebar2" class="sidebar">
-        <div class="sidebarCategory rotate">:: List members</div>
+        <div class="list-info">
+          <span class="rotate"> This is a list by @nimeikun </span>
+        </div> 
+        <div class="sidebarCategory">
+          <span class="rotate"> List members </span>
+        </div>
         <ul>
           <li ng-repeat="mb in members.users">
             <div class="member-item"  id="member{{$index}}" 

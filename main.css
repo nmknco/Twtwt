@@ -11,12 +11,11 @@ body {
     /*font-family: "Montserrat", "Microsoft YaHei";*/
     font-family: "Raleway",Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif;
     font-size: 14px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
-.rotate,
-.navbar a {
-    display: flex;  /* need this to rotate text */
+.rotate {
+    display: flex;  /* need this to rotate text in <span> */
     /*align-items: center;*/
     /* Safari */
     -webkit-transform: rotate(-0.1deg);
@@ -121,7 +120,7 @@ body {
     color: #ffffff;
     overflow-x: hidden;
     overflow-y: auto;
-    padding: 0;
+    padding: 0 5px;
     /*margin-right: 1px;*/
 }
 #sidebar1 {
@@ -151,7 +150,7 @@ body {
     align-items: center;
 /*    background-color: #3c4244;*/
     margin: 1px 0;
-    padding: 0 0 0 2px;
+    padding: 0 0 0 3px;
     height: 35px;
 }
 /*#sidebar1 ul li {
@@ -176,9 +175,9 @@ body {
 .expand {
     order: 2;
     padding: 0; /* no pading, in order for the <a> link to expand */
-    width: 35px;
+    width: 25px;
+    min-width: 25px;
     height: 100%;
-    min-width: 35px;
     font-size: 10px;
     font-weight: bolder;
     cursor: pointer;
@@ -191,7 +190,7 @@ body {
 .member-layover {
     visibility: hidden;
     position: absolute;
-    left: 45px;
+    left: 40px;
     top: 40px;
     width: 175px;
     border-radius: 22px 2px 22px 22px;
@@ -238,8 +237,8 @@ body {
     text-decoration: none;
     cursor: pointer;
     color: #EEEEEE;
-    padding: 0 10px;
-    /*display: block;*/
+    font-weight: normal;
+    padding: 0 5px;
     display: flex;  /* can use flex here for vertically align text*/
     align-items: center;
 }
@@ -260,8 +259,14 @@ body {
 }
 
 .sidebarCategory {
-    padding: 15px 10px;
-    font-weight: bold;
+    margin-top: 15px;
+    padding: 10px 3px;
+    font-size: 16px;
+    font-weight: normal;
+    color: #cccccc;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    border-color: #666666;
 }
 
 .avatar {
@@ -271,6 +276,11 @@ body {
     border-width: 2px;
     border-color: #aaaaaa;
     /*padding: 1px;*/
+}
+
+.list-info {
+    padding: 10px 5px;
+    font-weight: normal;
 }
 
 .user-info {
