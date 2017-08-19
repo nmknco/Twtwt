@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="main_design.css">
+    <script async src="http://platform.twitter.com/widgets.js" 
+      charset="utf-8"></script>
+    <script src="angular.min.js"></script>
+    <script src="angularApp_design.js"></script>
+
+    <title> (Design page) </title>
+  </head>
+
+  <body ng-app="twtwt" ng-controller="mainController">
+    <nav class="navbar">
+      <ul>
+        <li><a href=""><span>About</span></a></li>
+        <li><a href="">Sign out</a></li>
+      </ul>
+    </nav>
+    <div id="main">
+      <div id="sidebar1" class="sidebar">
+        <div class="sidebarHeader">
+        <img class="avatar"
+          src="img_design/talkdream.jpg" width="40" height="40" border="1">
+          @nimeikun</div>
+        <ul>
+          <li>
+            <div class="expand"> <a href=""> > </a> </div>
+            <div class="list-name">
+                <a href="">Following</a>
+            </div>
+          </li>
+        </ul>
+        <div class="sidebarCategory">:: Your lists</div>
+        <ul>
+          <li ng-repeat="ls in lists">
+            <div class="expand"> <a href=""> > </a> </div>
+            <div class="list-name">
+              <a href="" id="list{{$index}}" ng-click="showListTL($index)"> 
+              {{ls}}</a>
+            </div>
+          </li>
+        </ul>
+        <div class="sidebarCategory">:: Subscribed Lists</div>
+      </div>
+      <div id="sidebar2" class="sidebar">
+        <div class="sidebarCategory">:: List members</div>
+        <ul>
+          <li ng-repeat="member in members">
+            <div class="member-name">
+              <a href="" id="member{{$index}}" 
+                ng-click="showMemberTL(member, $index+1)"> 
+              @{{member}}</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="boxes">
+        <div id="box1" class="timeline"></div>
+        <div id="box2" class="timeline"></div>
+        <div id="box3" class="timeline"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

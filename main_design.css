@@ -1,0 +1,156 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+    background-color: #E0DFD5;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 
+            "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+}
+
+.navbar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    margin-bottom: 1px;
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0 10px;
+    margin: 0;
+    height: 100%;
+    width: 321px;
+}
+
+.navbar ul li {
+    float: left;
+    height: 100%;
+    /*width: 75px;*/
+}
+
+.timeline {
+    float: left;
+    width: 33%;
+    padding: 5px;
+}
+
+/* use margin or fixed position?? 
+ note they are VERY different
+ fixed position is to fix stuff to the current SCREEN! */
+
+.boxes {
+    position: fixed;
+    top: 36px;
+    bottom: 0;
+    left: 302px;
+    right: 0;
+}
+
+.boxes iframe {
+    height: 100% !important;
+    min-height: 0 !important;
+}
+
+.sidebar {
+    position: fixed;
+    top: 36px;
+    bottom: 0;
+    background-color: #313638;
+    color: #ffffff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+}
+#sidebar1 {
+    left: 0;
+    width: 150px;
+}
+#sidebar2 {
+    background-color: #424548;
+    left: 151px;
+    width: 150px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    background-color: #3c4244;
+    margin: 1px 0;
+    padding: 0 0 0 2px;
+    height: 35px;
+}
+
+/* elements in the same sidebar menu row */
+.list-name,
+.member-name {
+    padding: 0; /* no pading, in order for the <a> link to expand */
+    height: 100%;
+    white-space: nowrap; /* prohibit line break */
+    overflow: hidden;
+}
+
+.expand {
+    float: right;
+    padding: 0; /* no pading, in order for the <a> link to expand */
+    height: 100%;
+    width: 35px;
+}
+
+.sidebar a, 
+.sidebar a:hover,
+.sidebar a:focus,
+.sidebar a:active,
+.sidebar a:visited,
+.navbar a, 
+.navbar a:hover,
+.navbar a:focus,
+.navbar a:active,
+.navbar a:visited  {
+    height: 100%;
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 12px;
+    /*display: block;*/
+    display: flex;  /* can use flex here for vertically align text*/
+    align-items: center;
+}
+
+.sidebar a:hover{
+    background-color: #E4B341;
+}
+
+.expand a:hover,
+.navbar a:hover {
+    background-color: #555555;
+}
+
+.sidebarHeader {
+    padding: 20px 10px;
+    font-weight: bold;
+}
+
+.sidebarCategory {
+    padding: 15px 10px;
+    font-weight: bold;
+}
+
+.timeline {
+    padding-left: 0;
+}
+
+.avatar {
+    border-radius: 50%;
+}
