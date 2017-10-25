@@ -56,15 +56,16 @@ app.get('/list_members', function(req, res_app) {
     getLists.getListMembers(res_app, tokens, req.query);
 });
 
+app.get('/logout', function(req, res_app) {
+    res_app.clearCookie('accessToken', req.cookies.accessToken);
+    res_app.redirect(302, '/');
+});
+
 app.get('/', function(req, res_app) {
     // check cookies, and see if a user is recognized and not expired
-    // NO
-    //      redirect to auth
-    // console.log(req.cookies);
     if (!req.cookies.accessToken) {
         console.log("Redirecting to log in......");
-        res_app.redirect(302, 
-            'http://' + req.hostname + ':' + port + '/auth');
+        res_app.redirect(302, '/auth');
     } else {
         res_app.sendFile(path.join(__dirname, 'index.html'));
     }
