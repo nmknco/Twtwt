@@ -6,6 +6,8 @@ var querystring = require('querystring');
 var crypto = require('crypto');
 var genAuth = require('./genAuth');
 
+var port = 2333;
+
 function getRequestToken(req, res_app) {
 
     console.log('==== Step 1 ====');
@@ -118,7 +120,7 @@ function getAccessToken(req, res_app) {
                 'accessToken', querystring.parse(body).oauth_token);
             res_app.cookie(
                 'accessTokenSecret', querystring.parse(body).oauth_token_secret);
-            res_app.redirect(302, 'http://' + req.hostname + ':2333/');
+            res_app.redirect(302, 'http://' + req.hostname + ':' + port);
         });
     });
 
